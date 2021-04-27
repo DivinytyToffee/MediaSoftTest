@@ -41,7 +41,7 @@ class Shop(ShopBase):
 class Street(StreetBase):
     id: uuid.UUID
     city: uuid.UUID
-    shops = List[Shop] = []
+    shops: List[Shop] = []
 
     class Config:
         orm_mode = True
@@ -50,7 +50,7 @@ class Street(StreetBase):
 class City(CityBase):
     id: uuid.UUID
     streets: List[Street] = []
-    shops = List[Shop] = []
+    shops: List[Shop] = []
 
     class Config:
         orm_mode = True
